@@ -5,7 +5,7 @@ import urllib2
 import sys
 import xml.etree.ElementTree as ET
 
-GOOGLE_SUGGEST = "http://suggestqueries.google.com/complete/search?output=toolbar&hl=en&oe=utf8&q="
+GOOGLE_SUGGEST = "http://suggestqueries.google.com/complete/search?output=toolbar&hl=zh-TW&oe=utf8&q="
 EXAMPLE_TERM = "不可以"
 
 def getxml(search_term):
