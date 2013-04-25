@@ -3,6 +3,7 @@
 
 import urllib2
 import sys
+import xml.etree.ElementTree as ET
 
 GOOGLE_SUGGEST = "http://suggestqueries.google.com/complete/search?output=toolbar&hl=en&oe=utf8&q="
 EXAMPLE_TERM = "不可以"
@@ -22,7 +23,10 @@ def main():
         print "Get Google suggest queries of " + sys.argv[1]
         xml = getxml(sys.argv[1])
 
-    print xml
+    root = ET.fromstring(xml)
+    for child in root:
+        for grandson in child.findall('suggestion'):
+            print grandson.get('data')
 
 if __name__ == '__main__':
     main()
